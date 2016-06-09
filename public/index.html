@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8" />
+	<title>Tower Defense</title>
+		<link href='https://fonts.googleapis.com/css?family=Ceviche+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Coda' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+	<div id = "game">
+		<div id = "main-menu" class = "screen">
+			<ul class = "menu">
+				<img id = "menuTitle" src="./images/menu/castleDefense.png">
+				<li><button id = "id-new-game">New&nbsp;Game</button></li>
+				<li><button id = "id-high-scores">High&nbsp;Scores</button></li>
+				<li><button id = "id-user-controls">User&nbsp;Controls</button></li>
+				<li><button id = "id-about">About</button></li>
+			</ul>
+		</div>
+		<div id = "game-play" class = "screen">
+			<canvas id = "canvas-main" width = "700" height = "700"></canvas>
+			<div id = "tower-menu">
+				<div class = "castleDefenseImage">
+					<img id = "castleDefenseImage" src="./images/menu/castleDefense.png">
+				</div>
+				<div id = "player-status" class = "player-info">
+					<div class="float-left" style="width: 50%;">
+						<img id = "gold" src="./images/playerstatus/gold.png">
+						<label id = "players-gold"></label>
+					</div>
+					<div class="float-left" style="width: 50%;">
+						<img id = "lives-remaining" src="./images/playerstatus/lives.png">
+						<label id = "players-lives"></label>
+					</div>
+				</div>
+				<div id = "player-towers" class = "player-info">
+					<div id = "ground1" class = "tower-button" onclick="GAME.newTower.generate('arrow');" onmouseover=""></div>
+					<div id = "ground2" class = "tower-button" onclick="GAME.newTower.generate('cannon');"></div>
+					<div id = "air1" class = "tower-button" onclick="GAME.newTower.generate('air');"></div>
+					<div id = "mixed1" class = "tower-button" onclick="GAME.newTower.generate('mixed');"></div>
+				</div>
+				<div class="tower-stats-container" class = "player-info">
+					<div id = "new-tower-stats" class = "tower-stats">
+						<span id = "newtowerInfo" class = "display-info"></span>
+					</div>
+					<div id = "selected-tower-stats" class = "tower-stats" style="display: none;">
+						<span id = "selectedtowerInfo" class = "display-info"></span>
+						<div id = "upgradeTower" class="default-button">Upgrade</div>
+						<div id = "sellTower"  class="default-button">Sell</div>
+					</div>
+				</div>
+				<div id = "start-level">
+					<div id ="nextLevel" onclick="GAME.levels.playerStartedLevel();" class="default-button">Start</div>
+					<!--<div id ="Grunt" onclick="GAME.myCreeps.generate('grunt','left');" class="default-button">Grunt</div>
+					<div id ="Ogre" onclick="GAME.myCreeps.generate('ogre','left');" class="default-button">Ogre</div>
+					<div id ="Dragon" onclick="GAME.myCreeps.generate('dragon','left');" class="default-button">Dragon</div>-->
+				</div>
+			</div>
+			<ul class = "menu">
+				<li><button id = "id-game-play-back">Back</button></li>
+			</ul>
+		</div>
+		<div id = "high-scores" class = "screen">
+			<h1 class="mainText">High Scores</h1>
+			<div id="highScoresDiv" class="mainText">
+				<span id="highScoresSpan"></span>
+			</div>
+			<ul class = "menu">
+				<li><button id = "id-high-scores-back">Back</button></li>
+				<br/>
+				<li><button id = "id-high-scores-delete">Delete&nbspHigh&nbspScores</button></li>
+			</ul>
+		</div>
+		<div id = "user-controls" class = "screen">
+			<h1 class="mainText">Need to Build</h1>
+			<ul class = "menu">
+				<li><button id = "id-controls-back">Back</button></li>
+			</ul>
+		</div>
+		<div id = "about" class = "screen">
+			<h1 class="mainText">About</h1>
+			<p>Javascript Development</p>
+			<p>Justin Kent</p>
+			<ul class = "menu">
+				<li><button id = "id-about-back">Back</button></li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="scripts/modernizr.js"></script>
+	<script src="scripts/Game.js"></script>
+
+</body>
+
+</html>
